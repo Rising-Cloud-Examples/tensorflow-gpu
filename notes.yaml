@@ -1,0 +1,6 @@
+from: tensorflow:latest-gpu
+build: []
+deps:
+  - pip3 install -r requirements.txt
+daemons: []
+run: python3 train.py
