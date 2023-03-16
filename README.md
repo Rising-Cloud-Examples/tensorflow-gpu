@@ -100,7 +100,7 @@ When you ran risingcloud init, a new risingcloud.yaml file should have generated
 from: tensorflow:latest-gpu
 deps:
   - pip3 install -r requirements.txt
-We need to tell Rising Cloud what to run when a new request comes in, and set a time to 5min (600,000 ms). Change run and timeout to:
+We need to tell Rising Cloud what to run when a new request comes in, and set a time to 10min (600,000 ms). Change run and timeout to:
 
 run: python3 train.py
 timeout: 600000
