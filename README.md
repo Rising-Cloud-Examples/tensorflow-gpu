@@ -85,9 +85,6 @@ model.fit(generator.flow(x_train, y_train),
                              validation_data=(x_test, y_test),
                              steps_per_epoch=(len(x_train) // batch_size),
                              epochs=epochs, verbose=1,)
-This Python script will load the weights of the pretrained Keras model, download the image from the “img_url” field in the JSON body of job requests, and return its three best guesses about what the image is.
-
-TIP: You can load the model via a daemon to avoid loading the model each time a worker receives a job, but then you will have to find a way to pass data to and from the daemon.
 
 Create Your Requirements File
 
