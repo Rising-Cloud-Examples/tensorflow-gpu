@@ -100,9 +100,10 @@ When you ran risingcloud init, a new risingcloud.yaml file should have generated
 from: tensorflow:latest-gpu
 deps:
   - pip3 install -r requirements.txt
-We need to tell Rising Cloud what to run when a new request comes in. Change run to:
+We need to tell Rising Cloud what to run when a new request comes in, and set a time to 5min (600,000 ms). Change run and timeout to:
 
 run: python3 train.py
+timeout: 600000
 
 5. Build and Deploy your Rising Cloud Task
 Use the push command to push your updated risingcloud.yaml to your Task on Rising Cloud.
@@ -119,11 +120,7 @@ Alternatively, you could also use a combination to push, build and deploy all at
 risingcloud build -r -d
 Rising Cloud will now build out the infrastructure necessary to run and scale your application including networking, load balancing and DNS. Allow DNS a few minutes to propogate and then your app will be ready and available to use!
 
-6. Adjust the Task Timeout
-
-By default, Rising Cloud will timeout jobs after 300,000 milliseconds (5 min).  For the training model to complete, we need to adjust this to 600,000 milliseconds (100min).  To do this, from your App Overview screen, scroll down to the Task Settings section and change Task Timeout to:
-
-7. Queue Jobs for your Rising Cloud Task
+6. Queue Jobs for your Rising Cloud Task
 Make requests
 
 Rising Cloud will take some time to build and deploy your Rising Cloud Task. Once it is done, you can make HTTPS POST requests with JSON bodies to https://{your project URL}.risingcloud.app/risingcloud/jobs to queue jobs for Rising Cloud Task. These requests will return JSON responses with a “jobId” field containing the ID of your job. Make an HTTP GET request to https://{your project URL}.risingcloud.app/risingcloud/jobs/{job ID} in order to check on the status of the job.
