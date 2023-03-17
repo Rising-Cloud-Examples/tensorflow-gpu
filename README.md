@@ -7,6 +7,7 @@ In order to run the Rising Cloud commands in this guide, you will need to instal
 Using a command line console (called terminal on Mac OS X and command prompt on Windows) run the Rising Cloud login command. The interface will request your Rising Cloud email address and password.
 
 risingcloud login
+
 3. Initialize Your Rising Cloud Task
 Create a new directory on your workstation to place your project files in, then open this directory with your command line.
 
