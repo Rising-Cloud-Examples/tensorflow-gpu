@@ -1,4 +1,4 @@
-from: tensorflow:latest-gpu
+from: tensorflow/tensorflow:latest-gpu
 build: []
 deps:
   - pip3 install -r requirements.txt
