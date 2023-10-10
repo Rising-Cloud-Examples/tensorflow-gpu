@@ -87,13 +87,6 @@ model.fit(generator.flow(x_train, y_train),
                              steps_per_epoch=(len(x_train) // batch_size),
                              epochs=epochs, verbose=1,)
 
-Create Your Requirements File
-
-Create a file named “requirements.txt”, and in it, write the following contents:
-
-numpy==1.23.0
-scipy==1.8.1
-tensorflow==2.9.1
 Configure your risingcloud.yaml
 
 When you ran risingcloud init, a new risingcloud.yaml file should have generated in your project directory. Open that file now in your editor.  Change the from Base Image and Deps to the following:
